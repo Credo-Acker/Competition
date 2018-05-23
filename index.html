@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <!-- <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"> -->
+      <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=contain">
+
+    <title>中华传统文化网络知识竞赛</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="https://wx.idsbllp.cn/wx-api/share.js"></script>
+    <script>
+        WXSHARE.config({debug: false});
+        WXSHARE.ready(function() {
+            var option = {
+                  title: "",
+                  link: "",
+                  imgUrl: '',
+                  desc: '',
+                  type: '',
+                  success: function() {
+                      console.log('分享成功');
+                  },
+                  cancel: function() {
+                      console.log('取消分享');
+                  },
+              };
+              wx.onMenuShareTimeline(option);
+              wx.onMenuShareAppMessage(option);
+              wx.onMenuShareQQ(option);
+              wx.onMenuShareWeibo(option);
+              wx.onMenuShareQZone(option);
+        });
+    </script>
+  </body>
+</html>
