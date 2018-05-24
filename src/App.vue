@@ -29,10 +29,10 @@ button:focus,input:focus {
 }
 
 #app {
-    position: absolute;
-    max-width: 750px;
-    width: 100%;
-    height: 100%;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
     overflow: hidden;
 }
 </style>
