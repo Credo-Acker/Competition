@@ -104,7 +104,7 @@ export default {
             //   y: 0
             // },
             // ny: '', dy: '', yPum: '',
-            url: "https://wx.idsbllp.cn"
+            url: "https://wx.idsbllp.cn/competition"
         }
     },
     created() {

@@ -110,7 +110,7 @@ export default {
             noD: false,
             questionId: null,
             timer: null,
-            url: "https://wx.idsbllp.cn"
+            url: "https://wx.idsbllp.cn/competition"
         }
     },
     created() {
