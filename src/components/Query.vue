@@ -30,7 +30,7 @@ export default {
             none: true,
             none1: true,
             none2: true,
-            url: "https://wx.idsbllp.cn/competition"
+            url: "https://wx.idsbllp.cn"
         }
     },
     created() {
