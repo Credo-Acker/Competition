@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import mock from "../util/mock.js"
 
 export default {
     name: 'Index',
@@ -28,7 +27,7 @@ export default {
             // canAnswer: true,
             canAnswer: false,
             none: true,
-            url: ""
+            url: "http://yanzipe.s3.natapp.cc"
         }
     },
     computed: {

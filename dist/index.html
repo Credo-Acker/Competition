@@ -1,0 +1,21 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=contain"><title>中华传统文化网络知识竞赛</title><link href=./static/css/app.288aa6216982f98ef741be3c54f4b04f.css rel=stylesheet></head><body><div id=app></div><script src=https://res.wx.qq.com/open/js/jweixin-1.0.0.js></script><script src=https://wx.idsbllp.cn/wx-api/share.js></script><script>WXSHARE.config({debug: false});
+        WXSHARE.ready(function() {
+            var option = {
+                  title: "",
+                  link: "",
+                  imgUrl: '',
+                  desc: '',
+                  type: '',
+                  success: function() {
+                      console.log('分享成功');
+                  },
+                  cancel: function() {
+                      console.log('取消分享');
+                  },
+              };
+              wx.onMenuShareTimeline(option);
+              wx.onMenuShareAppMessage(option);
+              wx.onMenuShareQQ(option);
+              wx.onMenuShareWeibo(option);
+              wx.onMenuShareQZone(option);
+        });</script><script type=text/javascript src=./static/js/manifest.3ad1d5771e9b13dbdad2.js></script><script type=text/javascript src=./static/js/vendor.515831ce04377530a796.js></script><script type=text/javascript src=./static/js/app.4c47da4dfcd6115669f1.js></script></body></html>

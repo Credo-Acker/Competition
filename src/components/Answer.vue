@@ -97,13 +97,13 @@ export default {
             right: "",
             questionId: null,
             timer: null,
-            url: ""
+            url: "http://yanzipe.s3.natapp.cc"
         }
     },
     created() {
         this.$http.post(this.url + "/competition/getQuestion")
             .then((response) => {
-                if (response.data.data == null) {
+                if (response.data.msg == "run out of times") {
                     this.$router.push('/index');
                 }
                 this.question = response.data.data.title;
@@ -164,7 +164,7 @@ export default {
         send: function () {
             this.$http.post(this.url + "/competition/answerQuestion", qs.stringify({
                         questionId: this.questionId,
-                        choose: this.chooseC,
+                        answer: this.chooseC,
                         question_num: this.nowNum
                 }), {
                     headers: {

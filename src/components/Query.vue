@@ -21,7 +21,6 @@
 </template>
 
 <script>
-import mock from "../util/mock.js";
 
 export default {
     name: 'Query',
@@ -31,7 +30,7 @@ export default {
             none: true,
             none1: true,
             none2: true,
-            url: ""
+            url: "http://yanzipe.s3.natapp.cc"
         }
     },
     created() {

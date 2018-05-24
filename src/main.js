@@ -7,7 +7,7 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 Vue.prototype.$http = axios;
 Vue.config.productionTip = false;
-axios.defaults.withCredentials = true;
+// axios.defaults.withCredentials = true;
 
 // const moduleA = {
 //     state: {

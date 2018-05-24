@@ -110,7 +110,7 @@ export default {
             noD: false,
             questionId: null,
             timer: null,
-            url: ""
+            url: "http://yanzipe.s3.natapp.cc"
         }
     },
     created() {

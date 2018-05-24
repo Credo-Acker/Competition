@@ -74,7 +74,6 @@
 </template>
 
 <script>
-import mock from "../util/mock.js";
 
 export default {
     name: 'List',
@@ -105,7 +104,7 @@ export default {
             //   y: 0
             // },
             // ny: '', dy: '', yPum: '',
-            url: ""
+            url: "http://yanzipe.s3.natapp.cc"
         }
     },
     created() {
