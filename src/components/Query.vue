@@ -30,7 +30,7 @@ export default {
             none: true,
             none1: true,
             none2: true,
-            url: "https://yanzipe.s3.natapp.cc"
+            url: "https://wx.idsbllp.cn/competition"
         }
     },
     created() {
