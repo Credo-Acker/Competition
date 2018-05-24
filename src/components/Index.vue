@@ -27,7 +27,7 @@ export default {
             // canAnswer: true,
             canAnswer: false,
             none: true,
-            url: "https://wx.idsbllp.cn/competition"
+            url: "https://wx.idsbllp.cn"
         }
     },
     computed: {
