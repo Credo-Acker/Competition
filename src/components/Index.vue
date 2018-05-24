@@ -27,7 +27,7 @@ export default {
             // canAnswer: true,
             canAnswer: false,
             none: true,
-            url: "http://yanzipe.s3.natapp.cc"
+            url: "https://yanzipe.s3.natapp.cc"
         }
     },
     computed: {

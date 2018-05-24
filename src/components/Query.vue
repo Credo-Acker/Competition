@@ -30,7 +30,7 @@ export default {
             none: true,
             none1: true,
             none2: true,
-            url: "http://yanzipe.s3.natapp.cc"
+            url: "https://yanzipe.s3.natapp.cc"
         }
     },
     created() {

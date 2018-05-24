@@ -104,7 +104,7 @@ export default {
             //   y: 0
             // },
             // ny: '', dy: '', yPum: '',
-            url: "http://yanzipe.s3.natapp.cc"
+            url: "https://yanzipe.s3.natapp.cc"
         }
     },
     created() {

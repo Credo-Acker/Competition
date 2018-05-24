@@ -97,7 +97,7 @@ export default {
             right: "",
             questionId: null,
             timer: null,
-            url: "http://yanzipe.s3.natapp.cc"
+            url: "https://yanzipe.s3.natapp.cc"
         }
     },
     created() {
