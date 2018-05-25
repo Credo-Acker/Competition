@@ -133,6 +133,7 @@ export default {
             })
             .catch((err) => {
                 console.log(err);
+                alert(err)
             });
         //获取班级排行榜
         this.$http.post(this.url + '/competition/getClassRank')
