@@ -21,7 +21,7 @@
                     <div class="geren-BD">
                         <ul class="geren-BD-ul">
                             <li class="geren-BD-li" v-for="(item, index) in gerens">
-                                <span class="li-headImg"><img :src="item.image"></span>
+                                <span class="li-headImg"><img :src="item.headimgurl"></span>
                                 <span class="li-username">{{item.nickname}}</span>
                                 <span class="li-dati">{{item.total}}</span>
                                 <span class="li-paiming">{{item.rank}}</span>
