@@ -24,7 +24,7 @@
                                 <span class="li-headImg"><img :src="item.image"></span>
                                 <span class="li-username">{{item.nickname}}</span>
                                 <span class="li-dati">{{item.total}}</span>
-                                <span class="li-paiming">{{index + 1}}</span>
+                                <span class="li-paiming">{{item.rank}}</span>
                             </li>
                         </ul>
                     </div>
@@ -41,7 +41,7 @@
                                 <li class="banji-BD-li" v-for="(item, index) in banjis">
                                     <span class="li-xueyuan">{{item.college}}</span>
                                     <span class="li-bianhao">{{item.class_id}}</span>
-                                    <span class="li-mingci">{{index + 1}}</span>
+                                    <span class="li-mingci">{{item.total}}</span>
                                 </li>
                             </ul>
                         </div>
