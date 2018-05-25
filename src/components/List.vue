@@ -136,6 +136,7 @@ export default {
         //获取班级排行榜
         this.$http.post(this.url + '/competition/getClassRank')
             .then((response) => {
+                alert(JSON.stringify(response.data.data))
                 this.banjis = response.data.data;
             })
             .catch((err) => {
