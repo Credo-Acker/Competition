@@ -107,7 +107,7 @@ export default {
                 if (response.data.msg == "run out of times") {
                     this.$router.push('/index');
                 }
-                this.recordId = response.data.recordId;
+                this.recordId = response.data.record_id;
                 this.question = response.data.data.title;
                 this.questionId = response.data.data.questionId;
                 this.answerA = response.data.data.choice0;
@@ -123,7 +123,7 @@ export default {
                 } else if (response.data.data.answer === response.data.data.choice3) {
                     this.right = "D";
                 }
-                this.nowNum = response.data.recordId;
+                this.nowNum = response.data.question_num;
                 if (response.data.data == null) {
                     this.$router.push('/index');
                 }
