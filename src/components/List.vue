@@ -41,7 +41,7 @@
                                 <li class="banji-BD-li" v-for="(item, index) in banjis">
                                     <span class="li-xueyuan">{{item.college}}</span>
                                     <span class="li-bianhao">{{item.class_id}}</span>
-                                    <span class="li-mingci">{{item.total}}</span>
+                                    <span class="li-mingci">{{item.rank}}</span>
                                 </li>
                             </ul>
                         </div>
