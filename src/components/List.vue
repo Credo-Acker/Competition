@@ -111,7 +111,6 @@ export default {
         //获取个人信息
         this.$http.post(this.url + '/competition/getUserInfo')
             .then((response) => {
-                alert(JSON.stringify(response.data));
                 this.headImg = response.data.data.headimgurl;
                 this.username = response.data.data.nickname;
                 this.userpm = response.data.data.personal_rank;
