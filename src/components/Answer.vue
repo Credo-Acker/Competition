@@ -167,7 +167,7 @@ export default {
             this.$http.post(this.url + "/competition/answerQuestion", qs.stringify({
                         questionId: this.questionId,
                         answer: this.chooseC,
-                        recordId: this.recordId
+                        record_id: this.recordId
                 }), {
                     headers: {
                     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
