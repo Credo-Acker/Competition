@@ -111,7 +111,6 @@ export default {
         //获取个人信息
         this.$http.post(this.url + '/competition/getUserInfo')
             .then((response) => {
-                alert(JSON.stringify(response.data.data))
                 this.headImg = response.data.data.headimgurl;
                 this.username = response.data.data.nickname;
                 this.userpm = response.data.data.personal_rank;
@@ -133,7 +132,6 @@ export default {
             })
             .catch((err) => {
                 console.log(err);
-                alert(err)
             });
         //获取班级排行榜
         this.$http.post(this.url + '/competition/getClassRank')
@@ -144,6 +142,7 @@ export default {
             })
             .catch((err) => {
                 console.log(err);
+                alert(err)
             });
     },
     mounted() {
