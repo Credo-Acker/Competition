@@ -108,7 +108,7 @@ export default {
         console.log(this.$store.state.questions[this.nowNum - 1]);
         this.question = this.questionAll.title;
         this.questionId = this.questionAll.quesitionId;
-        this.recordId = this.questionAll.record_id;
+        this.recordId = this.questionAll.recordId;
         this.answerA = this.questionAll.choice0;
         this.answerB = this.questionAll.choice1;
         this.answerC = this.questionAll.choice2;
@@ -124,7 +124,6 @@ export default {
         } else if (answer == this.$md5(this.answerD + this.$store.state.str)) {
             this.right = "D";
         }
-        alert(JSON.stringify(this.questionAll), this.$md5(this.answerA + this.$store.state.str), this.$md5(this.answerB + this.$store.state.str), this.$md5(this.answerC + this.$store.state.str), this.$md5(this.answerD + this.$store.state.str));
     },
     mounted() {
         if (this.question) {
