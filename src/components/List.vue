@@ -450,8 +450,8 @@ export default {
     color: #a7806f;
     line-height: 10.6vw;
     vertical-align: middle;
-    margin-left: 4.6vw;
-    width: 6vw;
+    width: 12.8vw;
+    text-align: center;
 }
 
 .li-paiming {
@@ -462,7 +462,16 @@ export default {
     line-height: 10.6vw;
     color: #823f1a;
     vertical-align: middle;
-    margin-left: 8.6vw;
+    margin-left: 3.6vw;
+    width: 8.53vw;
+    text-align: center;
+}
+
+.li-mingci {
+    display: inline-block;
+    position: relative;
+    width: 8.53vw;
+    text-align: center;
 }
 
 .banji-BD-wrap {
@@ -475,6 +484,7 @@ export default {
 
 .banji-BD-title,.geren-BD-title {
     position: relative;
+    width: 58vw;
     margin-top: 1.48vh;
 }
 
@@ -485,11 +495,11 @@ export default {
 
 .span-nicheng {
     margin-left: 14vw;
-    margin-right: 5vw;
+    margin-right: 8vw;
 }
 
 .span-zhengque {
-    margin-right: 3vw;
+    margin-right: 3.5vw;
 }
 
 .span-xueyuan,.span-banji {
