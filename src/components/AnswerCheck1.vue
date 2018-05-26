@@ -114,9 +114,7 @@ export default {
         }
     },
     created() {
-        this.$store.commit({
-            type: 'incrementNow'
-        });
+        this.$store.commit('incrementNow');
         switch (this.$route.params.rightAnswer) {
             case "A":
                 if (this.$route.params.rightAnswer == this.$route.params.choose) {
