@@ -1,5 +1,5 @@
 <template>
-    <div class="answer" v-if="question">
+    <div class="answer">
         <div class="time-wrap">
             <div class="time">
                 <ul>
@@ -106,6 +106,8 @@ export default {
         this.nowNum = this.$store.state.nowNum;
         this.questionAll = this.$store.state.questions[this.nowNum - 1];
         console.log(this.$store.state.questions[this.nowNum - 1]);
+        alert(this.$store.state.questions);
+        alert(this.questionAll);
         this.question = this.questionAll.title;
         this.questionId = this.questionAll.quesitionId;
         this.recordId = this.questionAll.record_id;

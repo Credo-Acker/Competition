@@ -56,7 +56,6 @@ export default {
         toAnswer: function () {
             if (this.canAnswer) {
                 this.nones = true;
-                
                 //获取10道题目
                 this.$http.post(this.url + '/competition/getQuestions')
                     .then((response) => {
