@@ -392,13 +392,14 @@ export default {
 .geren-BD {
     position: relative;
     left: 11.66vw;
-    width: 58vw;
+    width: 59vw;
     height: 50vh;
     overflow: scroll;
 }
 
 .geren-BD-ul {
     position: relative;
+    width: 59vw;
 }
 
 .geren-BD-li {
@@ -420,8 +421,9 @@ export default {
     position: relative;
     top: 50%;
     left: 50%;
-    margin-left: -4.8vw;
-    margin-top: -4.8vw;
+    transform: translate(-4.8vw,-4.8vw);
+    /* margin-left: -4.8vw;
+    margin-top: -4.8vw; */
     width: 9.6vw;
     height: 9.6vw;
     border-radius: 7vw;
@@ -484,7 +486,7 @@ export default {
 
 .banji-BD-title,.geren-BD-title {
     position: relative;
-    width: 58vw;
+    width: 59vw;
     margin-top: 1.48vh;
 }
 
