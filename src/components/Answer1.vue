@@ -107,7 +107,7 @@ export default {
         this.questionAll = this.$store.state.questions[this.nowNum - 1];
         console.log(this.$store.state.questions[this.nowNum - 1]);
         this.question = this.questionAll.title;
-        this.questionId = this.questionAll.quesitionId;
+        this.questionId = this.questionAll.questionId;
         this.recordId = this.questionAll.recordId;
         this.answerA = this.questionAll.choice0;
         this.answerB = this.questionAll.choice1;
@@ -163,7 +163,6 @@ export default {
         },
         send: function () {
             if (this.right == this.chooseX) {
-                alert(this.questionId,this.chooseC,this.recordId);
                 this.$http.post(this.url + "/competition/answerQuestion", qs.stringify({
                             questionId: this.questionId,
                             answer: this.chooseC,
