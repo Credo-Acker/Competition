@@ -54,7 +54,18 @@ export default {
     methods: {
         toAnswer: function () {
             if (this.canAnswer) {
-                this.$router.push('/answer');
+                //获取10道题目
+                this.$http.post(this.url + '/competition/getQuestions')
+                    .then((response) => {
+                        this.$store.commit({
+                            type: "writeQuestions",
+                            data: response.data
+                        });
+                        this.$router.push('/answer1');
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
             } else {
                 this.none = false;
             }

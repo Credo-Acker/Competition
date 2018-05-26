@@ -3,10 +3,12 @@ import App from './App';
 import router from './router';
 import axios from 'axios';
 import Vuex from 'vuex';
+import md5 from 'md5';
 
 Vue.use(Vuex);
 Vue.prototype.$http = axios;
 Vue.config.productionTip = false;
+Vue.prototype.$md5 = md5;
 // axios.defaults.withCredentials = true;
 
 // const moduleA = {
@@ -46,11 +48,141 @@ const store = new Vuex.Store({
     //     b: moduleB
     // },
     state: {
-        openid: null
+        openid: null,
+        // questions: [
+        //     {
+        //         "data": {
+        //             "answer": "立冬",
+        //             "choice0": "白露",
+        //             "choice1": "小满",
+        //             "choice2": "惊蛰",
+        //             "choice3": "立冬",
+        //             "questionId": 123,
+        //             "title": "唐代李白“醉看墨花月白，恍疑雪满前村。”描述哪一时节的美景"
+        //         },
+        //         "status": 200,
+        //         "record_id": 3
+        //     }, {
+        //         "data": {
+        //             "answer": "立冬",
+        //             "choice0": "白露",
+        //             "choice1": "小满",
+        //             "choice2": "惊蛰",
+        //             "choice3": "立冬",
+        //             "questionId": 123,
+        //             "title": "唐代李白“醉看墨花月白，恍疑雪满前村。”描述哪一时节的美景"
+        //         },
+        //         "status": 200,
+        //         "record_id": 3
+        //     }, {
+        //         "data": {
+        //             "answer": "立冬",
+        //             "choice0": "白露",
+        //             "choice1": "小满",
+        //             "choice2": "惊蛰",
+        //             "choice3": "立冬",
+        //             "questionId": 123,
+        //             "title": "唐代李白“醉看墨花月白，恍疑雪满前村。”描述哪一时节的美景"
+        //         },
+        //         "status": 200,
+        //         "record_id": 3
+        //     }, {
+        //         "data": {
+        //             "answer": "立冬",
+        //             "choice0": "白露",
+        //             "choice1": "小满",
+        //             "choice2": "惊蛰",
+        //             "choice3": "立冬",
+        //             "questionId": 123,
+        //             "title": "唐代李白“醉看墨花月白，恍疑雪满前村。”描述哪一时节的美景"
+        //         },
+        //         "status": 200,
+        //         "record_id": 3
+        //     }, {
+        //         "data": {
+        //             "answer": "立冬",
+        //             "choice0": "白露",
+        //             "choice1": "小满",
+        //             "choice2": "惊蛰",
+        //             "choice3": "立冬",
+        //             "questionId": 123,
+        //             "title": "唐代李白“醉看墨花月白，恍疑雪满前村。”描述哪一时节的美景"
+        //         },
+        //         "status": 200,
+        //         "record_id": 3
+        //     }, {
+        //         "data": {
+        //             "answer": "立冬",
+        //             "choice0": "白露",
+        //             "choice1": "小满",
+        //             "choice2": "惊蛰",
+        //             "choice3": "立冬",
+        //             "questionId": 123,
+        //             "title": "唐代李白“醉看墨花月白，恍疑雪满前村。”描述哪一时节的美景"
+        //         },
+        //         "status": 200,
+        //         "record_id": 3
+        //     }, {
+        //         "data": {
+        //             "answer": "立冬",
+        //             "choice0": "白露",
+        //             "choice1": "小满",
+        //             "choice2": "惊蛰",
+        //             "choice3": "立冬",
+        //             "questionId": 123,
+        //             "title": "唐代李白“醉看墨花月白，恍疑雪满前村。”描述哪一时节的美景"
+        //         },
+        //         "status": 200,
+        //         "record_id": 3
+        //     }, {
+        //         "data": {
+        //             "answer": "立冬",
+        //             "choice0": "白露",
+        //             "choice1": "小满",
+        //             "choice2": "惊蛰",
+        //             "choice3": "立冬",
+        //             "questionId": 123,
+        //             "title": "唐代李白“醉看墨花月白，恍疑雪满前村。”描述哪一时节的美景"
+        //         },
+        //         "status": 200,
+        //         "record_id": 3
+        //     }, {
+        //         "data": {
+        //             "answer": "立冬",
+        //             "choice0": "白露",
+        //             "choice1": "小满",
+        //             "choice2": "惊蛰",
+        //             "choice3": "立冬",
+        //             "questionId": 123,
+        //             "title": "唐代李白“醉看墨花月白，恍疑雪满前村。”描述哪一时节的美景"
+        //         },
+        //         "status": 200,
+        //         "record_id": 3
+        //     }, {
+        //         "data": {
+        //             "answer": "立冬",
+        //             "choice0": "白露",
+        //             "choice1": "小满",
+        //             "choice2": "惊蛰",
+        //             "choice3": "立冬",
+        //             "questionId": 123,
+        //             "title": "唐代李白“醉看墨花月白，恍疑雪满前村。”描述哪一时节的美景"
+        //         },
+        //         "status": 200,
+        //         "record_id": 3
+        //     }
+        // ],
+        questions: [],
+        nowNum: 1,
+        str: "Kjj:Don't;Fuck;Me!"
     },
     mutations: {
-        writeOpenid: function (state, payload) {
-            state.openid = payload.data;
+        writeQuestions: function (state, payload) {
+            state.nowNum = 1;
+            state.questions = payload.data;
+        },
+        incrementNow: function (state) {
+            state.nowNum += 1;
         }
     }
 });

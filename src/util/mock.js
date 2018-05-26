@@ -60,9 +60,12 @@ module.export = {
     "getAnswer": Mock.mock("http://culture.cn/getAnswer", {
         "answer": "A"
     }),
-    "huojiang": Mock.mock("http://culture.cn/huojiang", {
-        "data": {
-            "ok|1": true
-        }
+    // "huojiang": Mock.mock("http://culture.cn/huojiang", {
+    //     "data": {
+    //         "ok|1": true
+    //     }
+    // }),
+    "lallala": Mock.mock("http://culture.cn/huojiang", {
+        "data": "yes"
     })
 }
