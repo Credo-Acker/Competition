@@ -399,7 +399,6 @@ export default {
 
 .geren-BD-ul {
     position: relative;
-    margin-top: 2.06vh;
 }
 
 .geren-BD-li {
@@ -485,12 +484,12 @@ export default {
 }
 
 .span-nicheng {
-    margin-left: 15vw;
-    margin-right: 6vw;
+    margin-left: 14vw;
+    margin-right: 5vw;
 }
 
 .span-zhengque {
-    margin-right: 4vw;
+    margin-right: 3vw;
 }
 
 .span-xueyuan,.span-banji {
