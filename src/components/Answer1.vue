@@ -113,7 +113,7 @@ export default {
         this.answerB = this.questionAll.choice1;
         this.answerC = this.questionAll.choice2;
         this.answerD = this.questionAll.choice3;
-        let answer = this.questionAll.answer;
+        let answer = this.questionAll.kjj;
 
         if (answer == this.$md5(this.answerA + this.$store.state.str)) {
             this.right = "A";

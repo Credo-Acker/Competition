@@ -43,10 +43,6 @@ Vue.prototype.$md5 = md5;
 //     }
 // }
 const store = new Vuex.Store({
-    // modules: {
-    //     a: moduleA,
-    //     b: moduleB
-    // },
     state: {
         openid: null,
         // questions: [
