@@ -114,17 +114,17 @@ export default {
         this.answerC = this.questionAll.choice2;
         this.answerD = this.questionAll.choice3;
         let answer = this.questionAll.answer;
-        //md5(this.answerA + this.$store.state.str)
 
-        if (answer === this.$md5(this.answerA + this.$store.state.str)) {
+        if (answer == this.$md5(this.answerA + this.$store.state.str)) {
             this.right = "A";
-        } else if (answer === this.$md5(this.answerB + this.$store.state.str)) {
+        } else if (answer == this.$md5(this.answerB + this.$store.state.str)) {
             this.right = "B";
-        } else if (answer === this.$md5(this.answerC + this.$store.state.str)) {
+        } else if (answer == this.$md5(this.answerC + this.$store.state.str)) {
             this.right = "C";
-        } else if (answer === this.$md5(this.answerD + this.$store.state.str)) {
+        } else if (answer == this.$md5(this.answerD + this.$store.state.str)) {
             this.right = "D";
         }
+        alert(JSON.stringify(this.questionAll), this.$md5(this.answerA + this.$store.state.str), this.$md5(this.answerB + this.$store.state.str), this.$md5(this.answerC + this.$store.state.str), this.$md5(this.answerD + this.$store.state.str));
     },
     mounted() {
         if (this.question) {
