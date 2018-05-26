@@ -106,7 +106,7 @@ export default {
         this.nowNum = this.$store.state.nowNum;
         this.questionAll = this.$store.state.questions[this.nowNum - 1];
         console.log(this.$store.state.questions[this.nowNum - 1]);
-        alert(this.$store.state.questions);
+        alert(JSON.stringify(this.$store.state.questions));
         alert(this.questionAll);
         this.question = this.questionAll.title;
         this.questionId = this.questionAll.quesitionId;

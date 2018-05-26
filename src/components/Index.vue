@@ -61,7 +61,7 @@ export default {
                     .then((response) => {
                         this.$store.commit({
                             type: "writeQuestions",
-                            data: response.data
+                            data: response.data.data
                         });
                         this.$router.push('/answer1');
                     })
