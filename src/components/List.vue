@@ -125,13 +125,13 @@ export default {
             .catch((err) => {
                 console.log(err);
             });
+        //获取班级排行榜
         this.$http.post(this.url + '/competition/getClassRank')
             .then((response) => {
                 this.banjis = response.data.data;
             })
             .catch((err) => {
                 console.log(err);
-                alert(err);
             });
         //获取个人排行榜
         this.$http.post(this.url + '/competition/getPersonalRank')
@@ -141,17 +141,6 @@ export default {
             .catch((err) => {
                 console.log(err);
             });
-        //获取班级排行榜
-        // this.$http.post(this.url + '/competition/getClassRank')
-        //     .then((response) => {
-        //         alert(JSON.stringify(response.data));
-        //         this.banjis = response.data.data;
-        //     })
-        //     .catch((err) => {
-        //         console.log(err);
-        //         alert(err)
-        //     });
-
     },
     mounted() {
 
@@ -159,9 +148,10 @@ export default {
     methods: {
         toAnswer: function () {
             if (this.canAnswer) {
-                this.$router.push('/answer');
+                this.$router.push('/index');
             } else {
-                this.none = false;
+                this.$router.push('/index');
+                // this.none = false;
             }
         },
         closeAlert: function () {

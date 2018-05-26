@@ -202,6 +202,7 @@ export default {
         this.answerC = this.$route.params.answerC;
         this.answerD = this.$route.params.answerD;
         this.nowNum = this.$route.params.nowNum;
+
     },
     mounted() {
         this.timer = setTimeout(() => {
@@ -217,7 +218,11 @@ export default {
     },
     methods: {
         toNext: function () {
-            this.$router.push('/answer');
+            if (this.nowNum == 10) {
+                this.$router.push('/list');
+            } else {
+                this.$router.push('/answer');
+            }
         }
     }
 }
