@@ -19,6 +19,11 @@
                 </div>
                 <template v-if="isGerenBD">
                     <div class="geren-BD">
+                        <div class="geren-BD-title">
+                            <span class="span-nicheng">昵称</span>
+                            <span class="span-zhengque">正确数</span>
+                            <span class="span-paiming">排名</span>
+                        </div>
                         <ul class="geren-BD-ul">
                             <li class="geren-BD-li" v-for="(item, index) in gerens">
                                 <span class="li-headImg"><img :src="item.headimgurl"></span>
@@ -387,14 +392,14 @@ export default {
 .geren-BD {
     position: relative;
     left: 11.66vw;
-    margin-top: 3.72vh;
     width: 58vw;
-    height: 46vh;
+    height: 50vh;
     overflow: scroll;
 }
 
 .geren-BD-ul {
     position: relative;
+    margin-top: 2.06vh;
 }
 
 .geren-BD-li {
@@ -469,14 +474,23 @@ export default {
     overflow: hidden;
 }
 
-.banji-BD-title {
+.banji-BD-title,.geren-BD-title {
     position: relative;
     margin-top: 1.48vh;
 }
 
-.span-xueyuan,.span-banji,.span-paiming {
+.span-xueyuan,.span-banji,.span-paiming,.span-zhengque,.span-nicheng {
     font-size: 4.26vw;
     color: #ff803b;
+}
+
+.span-nicheng {
+    margin-left: 15vw;
+    margin-right: 6vw;
+}
+
+.span-zhengque {
+    margin-right: 4vw;
 }
 
 .span-xueyuan,.span-banji {
