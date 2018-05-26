@@ -163,7 +163,7 @@ export default {
         },
         send: function () {
             if (this.right == this.chooseX) {
-                alert("yes");
+                alert(this.questionId,this.chooseC,this.recordId);
                 this.$http.post(this.url + "/competition/answerQuestion", qs.stringify({
                             questionId: this.questionId,
                             answer: this.chooseC,
