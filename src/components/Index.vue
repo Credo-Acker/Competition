@@ -7,10 +7,10 @@
             <router-link to="/list" class="to-list">
             </router-link>
         </div>
-        <div class="shadow" :class="{ no: none }">
+        <div class="shadow" :class="{ no: nones }">
 
         </div>
-        <div class="alert" :class="{ no: none }">
+        <div class="alert" :class="{ no: nonea }">
             <div class="five">
                 每人每天有5次答题机会
             </div>
@@ -29,7 +29,8 @@ export default {
         return {
             // canAnswer: true,
             canAnswer: false,
-            none: true,
+            nones: true,
+            nonea: true,
             url: "https://wx.idsbllp.cn"
         }
     },
@@ -37,7 +38,7 @@ export default {
 
     },
     created() {
-        //获取用户信息存储openid到vuex
+        //获取用户信息
         this.$http.post(this.url + '/competition/getUserInfo')
             .then((response) => {
                 if (response.data.data.left_times > 0) {
@@ -54,6 +55,8 @@ export default {
     methods: {
         toAnswer: function () {
             if (this.canAnswer) {
+                this.nones = true;
+                
                 //获取10道题目
                 this.$http.post(this.url + '/competition/getQuestions')
                     .then((response) => {
@@ -67,11 +70,13 @@ export default {
                         console.log(err);
                     });
             } else {
-                this.none = false;
+                this.nones = false;
+                this.nonea = false;
             }
         },
         closeAlert: function () {
-            this.none = true;
+            this.nones = true;
+            this.nonea = true;
         }
     }
 }
