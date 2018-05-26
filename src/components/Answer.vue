@@ -1,5 +1,5 @@
 <template>
-    <div class="answer" v-if="question_num">
+    <div class="answer" v-if="question">
         <div class="time-wrap">
             <div class="time">
                 <ul>
