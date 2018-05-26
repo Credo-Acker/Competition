@@ -18,20 +18,22 @@
                 <div :class="[ isGeren ? 'banji1' : 'banji2' ]" @click="changeBD(false)">
                 </div>
                 <template v-if="isGerenBD">
-                    <div class="geren-BD">
+                    <div class="geren-BD-wrap">
                         <div class="geren-BD-title">
                             <span class="span-nicheng">昵称</span>
                             <span class="span-zhengque">正确数</span>
                             <span class="span-paiming">排名</span>
                         </div>
-                        <ul class="geren-BD-ul">
-                            <li class="geren-BD-li" v-for="(item, index) in gerens">
-                                <span class="li-headImg"><img :src="item.headimgurl"></span>
-                                <span class="li-username">{{item.nickname}}</span>
-                                <span class="li-dati">{{item.total}}</span>
-                                <span class="li-paiming">{{item.rank}}</span>
-                            </li>
-                        </ul>
+                        <div class="geren-BD">
+                            <ul class="geren-BD-ul">
+                                <li class="geren-BD-li" v-for="(item, index) in gerens">
+                                    <span class="li-headImg"><img :src="item.headimgurl"></span>
+                                    <span class="li-username">{{item.nickname}}</span>
+                                    <span class="li-dati">{{item.total}}</span>
+                                    <span class="li-paiming">{{item.rank}}</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </template>
                 <template v-else>
@@ -391,9 +393,8 @@ export default {
 
 .geren-BD {
     position: relative;
-    left: 11.66vw;
     width: 59vw;
-    height: 50vh;
+    height: 43vh;
     overflow: scroll;
 }
 
@@ -476,7 +477,7 @@ export default {
     text-align: center;
 }
 
-.banji-BD-wrap {
+.banji-BD-wrap,.geren-BD-wrap {
     position: relative;
     left: 12.66vw;
     height: 50vh;

@@ -200,10 +200,6 @@ export default {
 </script>
 
 <style scoped>
-@font-face {
-    font-family:"fzse";
-    src: url('../assets/fzse.ttf');
-}
 
 /* @font-face {
     font-family:"cg";

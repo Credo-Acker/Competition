@@ -11,6 +11,9 @@
 
         </div>
         <div class="alert" :class="{ no: none }">
+            <div class="five">
+                每人每天有5次答题机会
+            </div>
             <div class="close" @click="closeAlert">
 
             </div>
@@ -139,6 +142,17 @@ export default {
     height: 6.28vh;
     background: url(../assets/return.png);
     background-size: 100% 100%;
+}
+
+.five {
+    position: absolute;
+    margin: 0 auto;
+    top: 25.3vh;
+    width: 100%;
+    text-align: center;
+    font-size: 3.9vw;
+    color: #aaaaaa;
+    font-family: 'fzse';
 }
 
 .no {
