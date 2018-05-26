@@ -1,5 +1,5 @@
 <template>
-    <div class="answer">
+    <div class="answer" v-if="question_num">
         <div class="time-wrap">
             <div class="time">
                 <ul>
@@ -130,9 +130,11 @@ export default {
             })
     },
     mounted() {
-        this.timer = setTimeout(() => {
-            this.send();
-        }, 10000);
+        if (this.question) {
+            this.timer = setTimeout(() => {
+                this.send();
+            }, 10000);
+        }
     },
     beforeDestroy() {
         clearTimeout(this.timer);
@@ -203,10 +205,10 @@ export default {
     src: url('../assets/fzse.ttf');
 }
 
-@font-face {
+/* @font-face {
     font-family:"cg";
     src: url('../assets/cg.ttf');
-}
+} */
 
 .answer {
     position: relative;
@@ -281,7 +283,7 @@ export default {
     text-align: center;
     width: 23.3vw;
     font-size: 6.66vw;
-    font-family: "cg";
+    /* font-family: "cg"; */
     font-weight: 800;
     color: #ffe595;
 }

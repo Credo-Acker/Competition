@@ -1,5 +1,5 @@
 <template>
-    <div class="answerCheck">
+    <div class="answerCheck" v-if="question">
         <div class="time-wrap">
             <div class="time">
                 <ul>
@@ -205,13 +205,15 @@ export default {
 
     },
     mounted() {
-        this.timer = setTimeout(() => {
-            if (this.nowNum <= 10) {
-                this.toNext();
-            } else {
-                this.$router.push('/index');
-            }
-        }, 2000);
+        if (this.question) {
+            this.timer = setTimeout(() => {
+                if (this.nowNum <= 10) {
+                    this.toNext();
+                } else {
+                    this.$router.push('/index');
+                }
+            }, 2000);
+        }
     },
     beforeDestroy() {
         clearTimeout(this.timer);

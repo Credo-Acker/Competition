@@ -67,6 +67,7 @@ export default {
 .index {
     position: relative;
     height: 100vh;
+    height: 100%;
     background: url(../assets/index.png);
     background-size: 100% 100%;
 }
