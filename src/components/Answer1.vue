@@ -194,7 +194,20 @@ export default {
                     nowNum: this.nowNum
                 }
             });
-
+            // this.$http.post(this.url + "/competition/answerQuestion2", qs.stringify({
+            //                 questionId: this.questionId,
+            //                 answer: this.chooseC,
+            //                 recordId: this.recordId
+            //         }), {
+            //             headers: {
+            //             'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+            //         }})
+            //         .then((response) => {
+            //             let answer = response.data.answer;
+            //         })
+            //         .catch((err) => {
+            //             console.log(err);
+            //         });
         }
     }
 }

@@ -414,7 +414,7 @@ export default {
 .geren-BD {
     position: relative;
     width: 59vw;
-    height: 43vh;
+    height: 40vh;
     overflow: scroll;
 }
 
@@ -532,7 +532,7 @@ export default {
 .banji-BD {
     position: relative;
     margin-top: 2.06vh;
-    height: 43vh;
+    height: 40vh;
     overflow: scroll;
 }
 
