@@ -99,6 +99,7 @@ export default {
             questionId: null,
             recordId: null,
             timer: null,
+            time: 0,
             url: "https://wx.idsbllp.cn"
         }
     },
