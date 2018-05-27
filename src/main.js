@@ -169,7 +169,8 @@ const store = new Vuex.Store({
         //     }
         // ],
         questions: [],
-        nowNum: 1,
+        nowNum: 0,
+        rightNum: 0,
         str: "Kjj:Don't;Fuck;Me!"
     },
     mutations: {
@@ -179,7 +180,10 @@ const store = new Vuex.Store({
         },
         incrementNow: function (state) {
             state.nowNum += 1;
-        }
+        },
+        incrementRight: function (state) {
+            state.rightNum += 1;
+        },
     }
 });
 

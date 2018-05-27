@@ -38,6 +38,7 @@ button:focus,input:focus {
     height: 100vh;
     height: 100%;
     margin: 0 auto;
+    padding: 0;
     overflow: hidden;
 }
 </style>

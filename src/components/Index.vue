@@ -7,7 +7,13 @@
             <router-link to="/list" class="to-list">
             </router-link>
         </div>
+        <div class="we" @click="openwe">
+
+        </div>
         <div class="shadow" :class="{ no: nones }">
+
+        </div>
+        <div class="shadows" :class="{ no: noness }" @click="closewe">
 
         </div>
         <div class="alert" :class="{ no: nonea }">
@@ -15,6 +21,11 @@
                 每人每天有5次答题机会
             </div>
             <div class="close" @click="closeAlert">
+
+            </div>
+        </div>
+        <div class="alertwe" :class="{ no: nonewe }">
+            <div class="chacha" @click="closewe">
 
             </div>
         </div>
@@ -30,7 +41,9 @@ export default {
             // canAnswer: true,
             canAnswer: false,
             nones: true,
+            noness: true,
             nonea: true,
+            nonewe: true,
             url: "https://wx.idsbllp.cn"
         }
     },
@@ -73,9 +86,17 @@ export default {
                 this.nonea = false;
             }
         },
+        openwe: function () {
+            this.noness = false;
+            this.nonewe = false;
+        },
         closeAlert: function () {
             this.nones = true;
             this.nonea = true;
+        },
+        closewe: function () {
+            this.noness = true;
+            this.nonewe = true;
         }
     }
 }
@@ -126,6 +147,39 @@ export default {
     height: 9.5vh;
 }
 
+.we {
+    position: absolute;
+    right: 3.3vw;
+    top: 0.8vh;
+    width: 10.93vw;
+    height: 10.93vw;
+    background: url(../assets/we.png);
+    background-size: 100% 100%;
+}
+
+.chacha {
+    position: absolute;
+    right: 9vw;
+    top: 3.6vh;
+    width: 4.27vw;
+    height: 4.27vw;
+    background: url(../assets/chacha.png);
+    background-size: 100% 100%;
+}
+
+.alertwe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -21vh;
+    margin-left: -45.8vw;
+    width: 91.6vw;
+    height: 42vh;
+    background: url(../assets/we_alert.png);
+    background-size: 100% 100%;
+    z-index: 99;
+}
+
 .shadow {
     position: absolute;
     top: 0;
@@ -134,6 +188,16 @@ export default {
     background: #000000;
     opacity: 0.5;
     z-index: 99;
+}
+
+.shadows {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000000;
+    opacity: 0.5;
+    z-index: 98;
 }
 
 .alert {

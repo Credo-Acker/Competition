@@ -11,6 +11,9 @@
                 <div class="userpm">
                     {{text}}：第<span>{{pm}}</span>名
                 </div>
+                <div class="userright" v-if="!isGerenBD">
+                    累计答题正确数：{{rightNum}}道
+                </div>
             </div>
             <div class="bangdan">
                 <div :class="[ isGeren ? 'geren2' : 'geren1' ]" @click="changeBD(true)">
@@ -88,9 +91,10 @@ export default {
         return {
             headImg: "",
             username: "",
-            userpm: 0,
-            banjipm: 0,
-            pm: 0,
+            userpm: "∞",
+            banjipm: "∞",
+            pm: "∞",
+            rightNum: 0,
             gerens: [],
             banjis: [],
             text: "我的排名",
@@ -124,10 +128,14 @@ export default {
                 this.banjipm = response.data.data.class_rank;
                 this.pm = this.userpm;
                 this.openid = response.data.data.openid;
+                this.rightNum = response.data.data.class_amount;
+                if (response.data.data.college == null) {
+                    this.banjipm = "∞";
+                    this.rightNum = "∞";
+                }
                 if (response.data.data.left_times > 0) {
                     this.canAnswer = true;
                 }
-                console.log(this.canAnswer);
             })
             .catch((err) => {
                 console.log(err);
@@ -341,6 +349,14 @@ export default {
     margin-right: 0.5vw;
     color: #ee7f95;
     font-weight: 500;
+}
+
+.userright {
+    text-align: center;
+    color: #ff803b;
+    font-size: 3.46vw;
+    font-weight: 600;
+    margin-top: 1vh;
 }
 
 .bangdan {

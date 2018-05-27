@@ -163,6 +163,7 @@ export default {
         },
         send: function () {
             if (this.right == this.chooseX) {
+                this.$store.commit('incrementRight');
                 this.$http.post(this.url + "/competition/answerQuestion", qs.stringify({
                             questionId: this.questionId,
                             answer: this.chooseC,
@@ -207,8 +208,9 @@ export default {
 } */
 
 .answer {
-    position: relative;
+    position: absolute;
     height: 100vh;
+    width: 100vw;
     background: url(../assets/answer_bg.png);
     background-size: 100% 100%;
 }

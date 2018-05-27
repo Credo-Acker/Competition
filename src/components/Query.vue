@@ -67,7 +67,8 @@ export default {
 
 <style scoped>
 .query {
-    position: relative;
+    position: absolute;
+    width: 100vw;
     /* height: 100vh; */
     height: 100%;
     background: url(../assets/query_bg.png);

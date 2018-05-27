@@ -1,5 +1,6 @@
 <template>
-    <div class="answerCheck" v-if="question">
+    <!-- <div class="answerCheck" v-if="question"> -->
+    <div class="answerCheck">
         <div class="time-wrap">
             <div class="time">
                 <ul>
@@ -84,6 +85,20 @@
         <div class="send" @click="toNext">
 
         </div>
+        <div class="shadow" :class="{ no: nones }">
+
+        </div>
+        <div class="alert" :class="{ no: nonea }">
+            <h3>
+                成绩发布
+            </h3>
+            <p>
+                亲！本组题目，你共答对<span>{{rightNum}}</span>道！<br>请继续加油哦～
+            </p>
+            <div class="close" @click="toList">
+
+            </div>
+        </div>
     </div>
 </template>
 
@@ -108,13 +123,17 @@ export default {
             noB: false,
             noC: false,
             noD: false,
+            rightNum: 0,
             questionId: null,
             timer: null,
+            nonea: true,
+            nones: true,
             url: "https://wx.idsbllp.cn"
         }
     },
     created() {
         this.$store.commit('incrementNow');
+        this.rightNum = this.$store.state.rightNum;
         switch (this.$route.params.rightAnswer) {
             case "A":
                 if (this.$route.params.rightAnswer == this.$route.params.choose) {
@@ -222,10 +241,14 @@ export default {
     methods: {
         toNext: function () {
             if (this.nowNum == 10) {
-                this.$router.push('/list');
+                this.nones = false;
+                this.nonea = false;
             } else {
                 this.$router.push('/answer1');
             }
+        },
+        toList: function () {
+            this.$router.push('/list');
         }
     }
 }
@@ -243,8 +266,9 @@ export default {
 } */
 
 .answerCheck {
-    position: relative;
+    position: absolute;
     height: 100vh;
+    width: 100vw;
     background: url(../assets/answer_bg.png);
     background-size: 100% 100%;
 }
@@ -375,6 +399,56 @@ export default {
     width: 41.2vw;
     height: 7.1vh;
     background: url(../assets/send.png);
+    background-size: 100% 100%;
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000000;
+    opacity: 0.5;
+    z-index: 99;
+}
+
+.alert {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -21vh;
+    margin-left: -45.8vw;
+    width: 91.6vw;
+    height: 42vh;
+    background: url(../assets/alert.png);
+    background-size: 100% 100%;
+    z-index: 99;
+}
+
+.alert h3 {
+    position: relative;
+    top: 5vh;
+    text-align: center;
+    color: #ff803b;
+}
+
+.alert p {
+    position: relative;
+    top: 10vh;
+    text-align: center;
+}
+
+.alert p span {
+    color: #ff803b;
+}
+
+.close {
+    position: relative;
+    top: 15.5vh;
+    margin: 0 auto;
+    width: 31.6vw;
+    height: 6.28vh;
+    background: url(../assets/queding.png);
     background-size: 100% 100%;
 }
 
