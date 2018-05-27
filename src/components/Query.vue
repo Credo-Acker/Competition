@@ -1,21 +1,11 @@
 <template>
     <div class="query">
-        <input type="text" id="studentNum" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" v-model="studentNum">
-        <div class="confirm" @click="search">
-
+        <div class="noResult">
+            暂无获奖信息哦~<br>
+            请继续加油！
         </div>
-        <div class="shadow" :class="{ no: none }">
-
-        </div>
-        <div class="alert1" :class="{ no: none1 }">
-            <div class="great" @click="close">
-
-            </div>
-        </div>
-        <div class="alert2" :class="{ no: none2 }">
-            <div class="sorry" @click="close">
-
-            </div>
+        <div class="tip">
+            个人获奖信息只有绑定学号用户才能查询到哦
         </div>
     </div>
 </template>
@@ -40,37 +30,37 @@ export default {
 
     },
     methods: {
-        search: function () {
-            //发送学号查询结果
-            if (/^\d{10}$/.test(this.studentNum)) {
-                this.$http.post(this.url + "/huojiang", {
-                        params: {
-                            studentNum: this.studentNum
-                        }
-                    })
-                    .then((response) => {
-                        this.studentNum = null;
-                        if (response.data.data.ok) {
-                            this.none = false;
-                            this.none1 = false;
-                        } else {
-                            this.none = false;
-                            this.none2 = false;
-                        }
-                    })
-                    .catch((err) => {
-                        console.log(err);
-                    })
-            } else {
-                this.studentNum = null;
-                alert("输入不合法，请重新输入");
-            }
-        },
-        close: function () {
-            this.none = true;
-            this.none1 = true;
-            this.none2 = true;
-        }
+        // search: function () {
+        //     //发送学号查询结果
+        //     if (/^\d{10}$/.test(this.studentNum)) {
+        //         this.$http.post(this.url + "/huojiang", {
+        //                 params: {
+        //                     studentNum: this.studentNum
+        //                 }
+        //             })
+        //             .then((response) => {
+        //                 this.studentNum = null;
+        //                 if (response.data.data.ok) {
+        //                     this.none = false;
+        //                     this.none1 = false;
+        //                 } else {
+        //                     this.none = false;
+        //                     this.none2 = false;
+        //                 }
+        //             })
+        //             .catch((err) => {
+        //                 console.log(err);
+        //             })
+        //     } else {
+        //         this.studentNum = null;
+        //         alert("输入不合法，请重新输入");
+        //     }
+        // },
+        // close: function () {
+        //     this.none = true;
+        //     this.none1 = true;
+        //     this.none2 = true;
+        // }
     }
 }
 </script>
@@ -84,7 +74,25 @@ export default {
     background-size: 100% 100%;
 }
 
-#studentNum {
+.noResult {
+    position: relative;
+    height: 6.9vh;
+    text-align: center;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-3.45vh);
+}
+
+.tip {
+    position: absolute;
+    bottom: 3vh;
+    color: #aaaaaa;
+    font-size: 3.46vw;
+    width: 100vw;
+    text-align: center;
+}
+
+/* #studentNum {
     position: absolute;
     left: 32.8vw;
     top: 37.7vh;
@@ -149,5 +157,5 @@ export default {
 
 .no {
     display: none;
-}
+} */
 </style>

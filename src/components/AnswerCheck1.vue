@@ -232,15 +232,15 @@ export default {
 </script>
 
 <style scoped>
-@font-face {
+/* @font-face {
     font-family:"fzse";
     src: url('../assets/fzse.ttf');
-}
+} */
 
-@font-face {
+/* @font-face {
     font-family:"cg";
     src: url('../assets/cg.ttf');
-}
+} */
 
 .answerCheck {
     position: relative;
@@ -278,7 +278,7 @@ export default {
     text-align: center;
     width: 23.3vw;
     font-size: 6.66vw;
-    font-family: "cg";
+    /* font-family: "cg"; */
     font-weight: 800;
     color: #ffe595;
 }
