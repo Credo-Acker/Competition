@@ -184,6 +184,9 @@ const store = new Vuex.Store({
         incrementRight: function (state) {
             state.rightNum += 1;
         },
+        writeRight: function (state) {
+            state.rightNum = 0;
+        },
     }
 });
 

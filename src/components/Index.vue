@@ -76,6 +76,7 @@ export default {
                             type: "writeQuestions",
                             data: response.data.data
                         });
+                        this.$store.commit("writeRight");
                         this.$router.push('/answer1');
                     })
                     .catch((err) => {
