@@ -113,17 +113,17 @@ export default {
         this.answerB = this.questionAll.choice1;
         this.answerC = this.questionAll.choice2;
         this.answerD = this.questionAll.choice3;
-        let answer = this.questionAll.kjj;
-
-        if (answer == this.$md5(this.answerA + this.$store.state.str)) {
-            this.right = "A";
-        } else if (answer == this.$md5(this.answerB + this.$store.state.str)) {
-            this.right = "B";
-        } else if (answer == this.$md5(this.answerC + this.$store.state.str)) {
-            this.right = "C";
-        } else if (answer == this.$md5(this.answerD + this.$store.state.str)) {
-            this.right = "D";
-        }
+        // let answer = this.questionAll.kjj;
+        //
+        // if (answer == this.$md5(this.answerA + this.$store.state.str)) {
+        //     this.right = "A";
+        // } else if (answer == this.$md5(this.answerB + this.$store.state.str)) {
+        //     this.right = "B";
+        // } else if (answer == this.$md5(this.answerC + this.$store.state.str)) {
+        //     this.right = "C";
+        // } else if (answer == this.$md5(this.answerD + this.$store.state.str)) {
+        //     this.right = "D";
+        // }
     },
     mounted() {
         if (this.question) {
@@ -162,39 +162,9 @@ export default {
             }
         },
         send: function () {
-            if (this.right == this.chooseX) {
-                this.$store.commit('incrementRight');
-                this.$http.post(this.url + "/competition/answerQuestion", qs.stringify({
-                            questionId: this.questionId,
-                            answer: this.chooseC,
-                            recordId: this.recordId
-                    }), {
-                        headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-                    }})
-                    .then((response) => {
-
-                    })
-                    .catch((err) => {
-                        console.log(err);
-                    });
-            }
-            this.$router.push({
-                name: 'AnswerCheck1',
-                params: {
-                    todayNum: this.nowNum,
-                    question: this.question,
-                    answerA: this.answerA,
-                    answerB: this.answerB,
-                    answerC: this.answerC,
-                    answerD: this.answerD,
-                    questionId: this.questionId,
-                    choose: this.chooseX,
-                    rightAnswer: this.right,
-                    nowNum: this.nowNum
-                }
-            });
-            // this.$http.post(this.url + "/competition/answerQuestion2", qs.stringify({
+            // if (this.right == this.chooseX) {
+            //     this.$store.commit('incrementRight');
+            //     this.$http.post(this.url + "/competition/answerQuestion", qs.stringify({
             //                 questionId: this.questionId,
             //                 answer: this.chooseC,
             //                 recordId: this.recordId
@@ -203,11 +173,70 @@ export default {
             //             'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
             //         }})
             //         .then((response) => {
-            //             let answer = response.data.answer;
+            //
             //         })
             //         .catch((err) => {
             //             console.log(err);
             //         });
+            // }
+            // this.$router.push({
+            //     name: 'AnswerCheck1',
+            //     params: {
+            //         todayNum: this.nowNum,
+            //         question: this.question,
+            //         answerA: this.answerA,
+            //         answerB: this.answerB,
+            //         answerC: this.answerC,
+            //         answerD: this.answerD,
+            //         questionId: this.questionId,
+            //         choose: this.chooseX,
+            //         rightAnswer: this.right,
+            //         nowNum: this.nowNum
+            //     }
+            // });
+            this.$http.post(this.url + "/competition/answerQuestion2", qs.stringify({
+                            questionId: this.questionId,
+                            answer: this.chooseC,
+                            recordId: this.recordId
+                    }), {
+                        headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                    }})
+                    .then((response) => {
+                        let answer = response.data.answer;
+                        if (answer == this.answerA) {
+                            this.right = "A";
+                        } else if (answer == this.answerB) {
+                            this.right = "B";
+                        } else if (answer == this.answerC) {
+                            this.right = "C";
+                        } else if (answer == this.answerD) {
+                            this.right = "D";
+                        }
+
+                        if (this.right == this.chooseX) {
+                            this.$store.commit('incrementRight');
+                        }
+
+                        this.$router.push({
+                            name: 'AnswerCheck1',
+                            params: {
+                                todayNum: this.nowNum,
+                                question: this.question,
+                                answerA: this.answerA,
+                                answerB: this.answerB,
+                                answerC: this.answerC,
+                                answerD: this.answerD,
+                                questionId: this.questionId,
+                                choose: this.chooseX,
+                                rightAnswer: this.right,
+                                nowNum: this.nowNum
+                            }
+                        });
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
         }
     }
 }
