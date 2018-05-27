@@ -204,7 +204,6 @@ export default {
                         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
                     }})
                     .then((response) => {
-                        alert(response.data)
                         let answer = response.data.answer;
                         if (answer == this.answerA) {
                             this.right = "A";

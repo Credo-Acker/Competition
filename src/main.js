@@ -174,6 +174,9 @@ const store = new Vuex.Store({
         str: "Kjj:Don't;Fuck;Me!"
     },
     mutations: {
+        writeNum: function (state) {
+            state.nowNum = 1;
+        },
         writeQuestions: function (state, payload) {
             state.nowNum = 1;
             state.questions = payload.data;

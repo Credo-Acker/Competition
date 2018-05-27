@@ -124,8 +124,12 @@ export default {
             .then((response) => {
                 this.headImg = response.data.data.headimgurl;
                 this.username = response.data.data.nickname;
-                this.userpm = response.data.data.personal_rank;
-                this.banjipm = response.data.data.class_rank;
+                if (this.userpm != 0) {
+                    this.userpm = response.data.data.personal_rank;
+                }
+                if (this.banjipm != 0) {
+                    this.banjipm = response.data.data.class_rank;
+                }
                 this.pm = this.userpm;
                 this.openid = response.data.data.openid;
                 this.userright = response.data.data.personal_amount;

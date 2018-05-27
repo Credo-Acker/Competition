@@ -240,7 +240,8 @@ export default {
     },
     methods: {
         toNext: function () {
-            if (this.nowNum == 10) {
+            if (this.nowNum >= 10) {
+                this.$store.commit('writeNum');
                 this.nones = false;
                 this.nonea = false;
             } else {
