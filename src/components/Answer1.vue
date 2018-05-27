@@ -197,7 +197,7 @@ export default {
             // });
             this.$http.post(this.url + "/competition/answerQuestion2", qs.stringify({
                             questionId: this.questionId,
-                            answer: this.chooseC,
+                            choice: this.chooseC,
                             recordId: this.recordId
                     }), {
                         headers: {
