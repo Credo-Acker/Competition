@@ -11,7 +11,7 @@
                 <div class="userpm">
                     {{text}}：第<span>{{pm}}</span>名
                 </div>
-                <div class="userright" v-if="!isGerenBD">
+                <div class="userright">
                     累计答题正确数：{{rightNum}}道
                 </div>
             </div>
@@ -122,14 +122,15 @@ export default {
         //获取个人信息
         this.$http.post(this.url + '/competition/getUserInfo')
             .then((response) => {
-                alert(JSON.stringify(response.data.data));
                 this.headImg = response.data.data.headimgurl;
                 this.username = response.data.data.nickname;
                 this.userpm = response.data.data.personal_rank;
                 this.banjipm = response.data.data.class_rank;
                 this.pm = this.userpm;
                 this.openid = response.data.data.openid;
-                this.rightNum = response.data.data.class_amount;
+                this.userright = response.data.data.personal_amount;
+                this.banjiright = response.data.data.class_amount;
+                this.rightNum = this.userright;
                 if (response.data.data.college == null) {
                     this.banjipm = "∞";
                     this.rightNum = "∞";
@@ -140,7 +141,6 @@ export default {
             })
             .catch((err) => {
                 console.log(err);
-                alert(err);
             });
         //获取班级排行榜
         this.$http.post(this.url + '/competition/getClassRank')
@@ -182,11 +182,13 @@ export default {
                 this.isGerenBD = true;
                 this.text = "我的排名";
                 this.pm = this.userpm;
+                this.rightNum = this.userright;
             } else {
                 this.isGeren = "";
                 this.isGerenBD = false;
                 this.text = "我所在的班级排名";
                 this.pm = this.banjipm;
+                this.rightNum = this.banjiright;
             }
         }
         // movesBD: function () {
@@ -498,13 +500,9 @@ export default {
 .banji-BD-wrap,.geren-BD-wrap {
     position: relative;
     left: 12.66vw;
-    height: 50vh;
+    height: 45vh;
     width: 58vw;
     overflow: hidden;
-}
-
-.banji-BD-wrap {
-    height: 45vh;
 }
 
 .banji-BD-title,.geren-BD-title {
