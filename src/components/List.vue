@@ -501,6 +501,10 @@ export default {
     overflow: hidden;
 }
 
+.banji-BD-wrap {
+    height: 45vh;
+}
+
 .banji-BD-title,.geren-BD-title {
     position: relative;
     width: 59vw;
