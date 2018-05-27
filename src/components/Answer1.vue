@@ -99,7 +99,7 @@ export default {
             questionId: null,
             recordId: null,
             timer: null,
-            time: 0,
+            time: true,
             url: "https://wx.idsbllp.cn"
         }
     },
@@ -195,50 +195,53 @@ export default {
             //         nowNum: this.nowNum
             //     }
             // });
-            this.$http.post(this.url + "/competition/answerQuestion2", qs.stringify({
-                            questionId: this.questionId,
-                            choice: this.chooseC,
-                            recordId: this.recordId
-                    }), {
-                        headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-                    }})
-                    .then((response) => {
-                        let answer = response.data.answer;
-                        if (answer == this.answerA) {
-                            this.right = "A";
-                        } else if (answer == this.answerB) {
-                            this.right = "B";
-                        } else if (answer == this.answerC) {
-                            this.right = "C";
-                        } else if (answer == this.answerD) {
-                            this.right = "D";
-                        }
-
-                        if (this.right == this.chooseX) {
-                            this.$store.commit('incrementRight');
-                        }
-
-                        this.$router.push({
-                            name: 'AnswerCheck1',
-                            params: {
-                                todayNum: this.nowNum,
-                                question: this.question,
-                                answerA: this.answerA,
-                                answerB: this.answerB,
-                                answerC: this.answerC,
-                                answerD: this.answerD,
+            if (this.time) {
+                this.$http.post(this.url + "/competition/answerQuestion2", qs.stringify({
                                 questionId: this.questionId,
-                                choose: this.chooseX,
-                                rightAnswer: this.right,
-                                nowNum: this.nowNum
+                                choice: this.chooseC,
+                                recordId: this.recordId
+                        }), {
+                            headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                        }})
+                        .then((response) => {
+                            let answer = response.data.answer;
+                            if (answer == this.answerA) {
+                                this.right = "A";
+                            } else if (answer == this.answerB) {
+                                this.right = "B";
+                            } else if (answer == this.answerC) {
+                                this.right = "C";
+                            } else if (answer == this.answerD) {
+                                this.right = "D";
                             }
+
+                            if (this.right == this.chooseX) {
+                                this.$store.commit('incrementRight');
+                            }
+
+                            this.$router.push({
+                                name: 'AnswerCheck1',
+                                params: {
+                                    todayNum: this.nowNum,
+                                    question: this.question,
+                                    answerA: this.answerA,
+                                    answerB: this.answerB,
+                                    answerC: this.answerC,
+                                    answerD: this.answerD,
+                                    questionId: this.questionId,
+                                    choose: this.chooseX,
+                                    rightAnswer: this.right,
+                                    nowNum: this.nowNum
+                                }
+                            });
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                            alert(err);
                         });
-                    })
-                    .catch((err) => {
-                        console.log(err);
-                        alert(err);
-                    });
+            }
+            this.time = false;
         }
     }
 }
