@@ -196,7 +196,7 @@ export default {
             //     }
             // });
             if (this.time) {
-                this.$http.post(this.url + "/competition/answerQuestion2", qs.stringify({
+                this.$http.post(this.url + "/competition/answerQuestion", qs.stringify({
                                 questionId: this.questionId,
                                 choice: this.chooseC,
                                 recordId: this.recordId
