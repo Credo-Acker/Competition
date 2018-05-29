@@ -412,7 +412,7 @@ export default {
     bottom: 4.5vh;
     width: 100vw;
     text-align: center;
-    font-size: 1.5vw;
+    font-size: 2vw;
     color: #aaa;
 }
 
