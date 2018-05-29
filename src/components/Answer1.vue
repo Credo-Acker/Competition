@@ -72,6 +72,9 @@
         <div class="send" @click="send">
 
         </div>
+        <div class="tip">
+            PS:中华文化博大精深，题目如有差错，<br>请直接向我们反馈。
+        </div>
     </div>
 </template>
 
@@ -404,5 +407,15 @@ export default {
     height: 7.1vh;
     background: url(../assets/send.png);
     background-size: 100% 100%;
+}
+
+.tip {
+    position: absolute;
+    /* bottom: 2.4vh; */
+    bottom: 4.5vh;
+    width: 100vw;
+    text-align: center;
+    font-size: 1.5vw;
+    color: #aaa;
 }
 </style>
