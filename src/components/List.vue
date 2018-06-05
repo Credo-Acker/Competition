@@ -355,7 +355,7 @@ export default {
     display: inline-block;
     margin-left: 0.5vw;
     margin-right: 0.5vw;
-    color: #ee7f95;
+    color: #ff803b;
     font-weight: 500;
 }
 
