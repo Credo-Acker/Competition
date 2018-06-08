@@ -44,6 +44,7 @@ export default {
             noness: true,
             nonea: true,
             nonewe: true,
+            // url: "https://wx.idsbllp.cn/test-proxy-rewrite-root"
             url: "https://wx.idsbllp.cn"
         }
     },

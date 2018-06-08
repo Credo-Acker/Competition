@@ -20,6 +20,7 @@ export default {
             none: true,
             none1: true,
             none2: true,
+            // url: "https://wx.idsbllp.cn/test-proxy-rewrite-root"
             url: "https://wx.idsbllp.cn"
         }
     },

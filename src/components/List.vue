@@ -32,7 +32,7 @@
                                 <li class="geren-BD-li" v-for="(item, index) in gerens">
                                     <span class="li-headImg"><img :src="item.headimgurl"></span>
                                     <span class="li-username">{{item.nickname}}</span>
-                                    <span class="li-dati">{{item.total}}</span>
+                                    <span class="li-dati">{{item.amount}}</span>
                                     <span class="li-paiming">{{item.rank}}</span>
                                 </li>
                             </ul>
@@ -115,6 +115,7 @@ export default {
             //   y: 0
             // },
             // ny: '', dy: '', yPum: '',
+            // url: "https://wx.idsbllp.cn/test-proxy-rewrite-root"
             url: "https://wx.idsbllp.cn"
         }
     },
@@ -135,9 +136,9 @@ export default {
                 this.userright = response.data.data.personal_amount;
                 this.banjiright = response.data.data.class_amount;
                 this.rightNum = this.userright;
-                if (response.data.data.college == null) {
+                if (response.data.data.isBinding == false) {
                     this.banjipm = "∞";
-                    this.rightNum = "∞";
+                    this.banjiright = "∞";
                 }
                 if (response.data.data.left_times > 0) {
                     this.canAnswer = true;

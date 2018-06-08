@@ -131,6 +131,7 @@ export default {
             timer: null,
             nonea: true,
             nones: true,
+            // url: "https://wx.idsbllp.cn/test-proxy-rewrite-root"
             url: "https://wx.idsbllp.cn"
         }
     },
