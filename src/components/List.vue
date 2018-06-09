@@ -115,12 +115,13 @@ export default {
             //   y: 0
             // },
             // ny: '', dy: '', yPum: '',
+            // url: "https://wx.idsbllp.cn/test-proxy-rewrite-root"
             url: "https://wx.idsbllp.cn"
         }
     },
     created() {
         //获取个人信息
-        this.$http.post(this.url + '/competition/getUserInfo')
+        this.$http.post(this.url + '/competition/getUserInfo', {paramas: {}}, {headers: {'X-Requested-With': 'XMLHttpRequest'}})
             .then((response) => {
                 this.headImg = response.data.data.headimgurl;
                 this.username = response.data.data.nickname;
