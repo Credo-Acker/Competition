@@ -71,7 +71,7 @@ export default {
             //获取10道题目
             this.$http.post(this.url + '/competition/getQuestions')
                 .then((response) => {
-                    if (response.data.status == 400) {
+                    if (response.data.status == "400" ||response.data.status == 400 || response.data.msg == "run out of times") {
                         //没有答题机会情况下
                         this.nones = false;
                         this.nonea = false;
