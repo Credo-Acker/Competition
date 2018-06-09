@@ -44,7 +44,6 @@ export default {
             noness: true,
             nonea: true,
             nonewe: true,
-            // url: "https://wx.idsbllp.cn/test-proxy-rewrite-root"
             url: "https://wx.idsbllp.cn"
         }
     },
@@ -53,40 +52,40 @@ export default {
     },
     created() {
         //获取用户信息
-        this.$http.post(this.url + '/competition/getUserInfo')
-            .then((response) => {
-                if (response.data.data.left_times > 0) {
-                    this.canAnswer = true;
-                }
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+        // this.$http.post(this.url + '/competition/getUserInfo')
+        //     .then((response) => {
+        //         if (response.data.data.left_times > 0) {
+        //             this.canAnswer = true;
+        //         }
+        //     })
+        //     .catch((err) => {
+        //         console.log(err);
+        //     });
     },
     mounted() {
 
     },
     methods: {
         toAnswer: function () {
-            if (this.canAnswer) {
-                this.nones = true;
-                //获取10道题目
-                this.$http.post(this.url + '/competition/getQuestions')
-                    .then((response) => {
+            //获取10道题目
+            this.$http.post(this.url + '/competition/getQuestions')
+                .then((response) => {
+                    if (response.status == 400) {
+                        //没有答题机会情况下
+                        this.nones = false;
+                        this.nonea = false;
+                    } else {
                         this.$store.commit({
                             type: "writeQuestions",
                             data: response.data.data
                         });
                         this.$store.commit("writeRight");
                         this.$router.push('/answer1');
-                    })
-                    .catch((err) => {
-                        console.log(err);
-                    });
-            } else {
-                this.nones = false;
-                this.nonea = false;
-            }
+                    }
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
         },
         openwe: function () {
             this.noness = false;

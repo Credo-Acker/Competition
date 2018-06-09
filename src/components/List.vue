@@ -115,7 +115,6 @@ export default {
             //   y: 0
             // },
             // ny: '', dy: '', yPum: '',
-            // url: "https://wx.idsbllp.cn/test-proxy-rewrite-root"
             url: "https://wx.idsbllp.cn"
         }
     },
@@ -136,9 +135,9 @@ export default {
                 this.userright = response.data.data.personal_amount;
                 this.banjiright = response.data.data.class_amount;
                 this.rightNum = this.userright;
-                if (response.data.data.isBinding == false) {
+                if (response.data.data.college == null) {
                     this.banjipm = "∞";
-                    this.banjiright = "∞";
+                    this.rightNum = "∞";
                 }
                 if (response.data.data.left_times > 0) {
                     this.canAnswer = true;
