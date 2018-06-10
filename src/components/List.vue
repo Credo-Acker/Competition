@@ -136,9 +136,9 @@ export default {
                 this.userright = response.data.data.personal_amount;
                 this.banjiright = response.data.data.class_amount;
                 this.rightNum = this.userright;
-                if (response.data.data.college == null) {
+                if (response.data.data.isBinding == false) {
                     this.banjipm = "∞";
-                    this.rightNum = "∞";
+                    this.banjiright = "∞";
                 }
                 if (response.data.data.left_times > 0) {
                     this.canAnswer = true;
