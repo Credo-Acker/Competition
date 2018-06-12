@@ -139,6 +139,8 @@ export default {
                 if (response.data.data.isBinding == false) {
                     this.banjipm = "∞";
                     this.banjiright = "∞";
+                } else {
+                    this.$store.commit("changeCanQuery");
                 }
                 if (response.data.data.left_times > 0) {
                     this.canAnswer = true;

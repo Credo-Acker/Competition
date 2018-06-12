@@ -171,7 +171,8 @@ const store = new Vuex.Store({
         questions: [],
         nowNum: 0,
         rightNum: 0,
-        str: "Kjj:Don't;Fuck;Me!"
+        str: "Kjj:Don't;Fuck;Me",
+        canQuery: false
     },
     mutations: {
         writeNum: function (state) {
@@ -190,6 +191,9 @@ const store = new Vuex.Store({
         writeRight: function (state) {
             state.rightNum = 0;
         },
+        changeCanQuery: function (state) {
+            state.canQuery = true;
+        }
     }
 });
 

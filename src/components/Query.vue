@@ -1,8 +1,68 @@
 <template>
     <div class="query">
-        <div class="noResult">
+        <div class="noResult" :class="{no: canLook}">
             暂无获奖信息哦~<br>
             请继续加油！
+        </div>
+        <div class="prize" :class="{no: !canLook}">
+            <h2>个人获奖榜单：</h2>
+            <div class="yousheng">
+                <div class="title1">
+                    优胜奖
+                </div>
+                <ul class="ul-ys">
+                    <li>
+                        第一周：李京津 2014XXX495
+                    </li>
+                    <!-- <li>
+                        第二周：啦啦啦 2016XXX222
+                    </li> -->
+                </ul>
+            </div>
+            <!-- <div class="onetwothree">
+                <ul>
+                    <li class="li-ott">
+                        <div class="title2">
+                            一等奖
+                        </div>
+                        <div class="names">
+                            啦啦啦 2016XXX222
+                        </div>
+                    </li>
+                    <li class="li-ott">
+                        <div class="title2">
+                            二等奖
+                        </div>
+                        <div class="names">
+                            啦啦啦 2016XXX222
+                        </div>
+                    </li>
+                    <li class="li-ott">
+                        <div class="title2">
+                            三等奖
+                        </div>
+                        <div class="names">
+                            啦啦啦 2016XXX222
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="xingyun">
+                <div class="title1">
+                    幸运奖
+                </div>
+                <ul class="ul-xy">
+                    <li>
+                        啦啦啦 2016XXX222
+                    </li>
+                    <li>
+                        啦啦啦 2016XXX222
+                    </li>
+                    <li>
+                        啦啦啦 2016XXX222
+                    </li>
+                </ul>
+            </div> -->
         </div>
         <div class="tip">
             个人获奖信息只有绑定学号用户才能查询到哦
@@ -20,11 +80,12 @@ export default {
             none: true,
             none1: true,
             none2: true,
+            canLook: false,
             url: "https://wx.idsbllp.cn"
         }
     },
     created() {
-
+        this.canLook = this.$store.state.canQuery;
     },
     mounted() {
 
@@ -75,6 +136,72 @@ export default {
     background-size: 100% 100%;
 }
 
+.prize {
+    overflow: scroll;
+    position: relative;
+    top: 28vh;
+    height: 60vh;
+    padding: 0 10vw;
+}
+
+.prize h2 {
+    font-size: 6.5vw;
+}
+
+.yousheng {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.ul-ys, .ul-xy, .names {
+    display: inline-block;
+    font-size: 4.2vw;
+    line-height: 5vw;
+}
+
+.ul-ys li {
+    margin-bottom: 3vh;
+}
+
+.ul-ys li:last-child {
+    margin-bottom: 0vh;
+}
+
+.onetwothree {
+    margin-bottom: 5vh;
+}
+
+.li-ott {
+    margin-bottom: 3vh;
+}
+
+.xingyun {
+    position: relative;
+    margin-top: 5vh;
+}
+
+.ul-xy li {
+    margin-bottom: 3vh;
+}
+
+.title1 {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 5vw;
+    margin-right: 5vw;
+}
+
+.title1:nth-child(1) {
+    vertical-align: top;
+}
+
+.title2 {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 5vw;
+    margin-right: 5vw;
+}
+
 .noResult {
     position: relative;
     height: 6.9vh;
@@ -91,6 +218,10 @@ export default {
     font-size: 3.46vw;
     width: 100vw;
     text-align: center;
+}
+
+.no {
+    display: none;
 }
 
 /* #studentNum {
